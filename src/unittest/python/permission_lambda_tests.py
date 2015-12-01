@@ -6,13 +6,6 @@ import permission_lambda
 
 
 class PermissionLambdaTests(TestCase):
-    def _get_permission_statements(self, client, queue_url):
-        """ Return a list of policy statements for given queue"""
-        policy_response = client.get_queue_attributes(
-            QueueUrl=queue_url, AttributeNames=['Policy'])
-        policy = policy_response['Attributes']['Policy']
-        return json.loads(policy)['Statement']
-
     @mock_s3
     def test_get_usofa_accountlist_from_bucket(self):
         bucketname = "testbucket"
