@@ -33,3 +33,5 @@ def set_properties(project):
     project.build_depends_on("simplejson")
     project.set_property("bucket_name", "aws-set-sqs-permission-lambda")
     project.set_property("lambda_file_access_control", "private")
+    project.set_property('integrationtest_inherit_environment', True)
+    project.set_property('integrationtest_always_verbose', True)
