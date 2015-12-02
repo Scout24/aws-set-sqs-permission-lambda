@@ -50,6 +50,7 @@ def set_permissions(queue_url, label, permissionlist, accountidlist):
             raise AlreadyExistsException(e.response['Error']['Message'])
         raise
 
+
 def update_sqs_permissions(event, context):
     """ Institute permission for all accountids in the USofA on sqs queue
     Deletes permission before re-adding if permission-set exists
