@@ -31,6 +31,7 @@ def set_properties(project):
     project.build_depends_on("moto")
     project.build_depends_on("unittest2")
     project.build_depends_on("simplejson")
+    project.set_property("coverage_threshold_warn", 50)
     project.set_property("bucket_name", "aws-set-sqs-permission-lambda")
     project.set_property("lambda_file_access_control", "private")
     project.set_property('integrationtest_inherit_environment', True)
