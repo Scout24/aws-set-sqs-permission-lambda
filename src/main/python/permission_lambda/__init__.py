@@ -2,6 +2,7 @@ from __future__ import print_function, division, absolute_import
 from botocore.exceptions import ClientError
 import boto3
 import json
+from pils.aws import get_lambda_config_property
 
 
 class AlreadyExistsException(Exception):
@@ -9,7 +10,7 @@ class AlreadyExistsException(Exception):
     pass
 
 
-def get_usofa_accountlist(bucketname):
+def get_usofa_account_ids(bucketname):
     """ Return a list of Account IDs """
     usofa_data = _get_usofa_data(bucketname)
     return [account_data['id'] for account_data in usofa_data.values()]
@@ -56,4 +57,7 @@ def update_sqs_permissions(event, context):
     Deletes permission before re-adding if permission-set exists
     Return None
     """
-    pass
+    properties = get_lambda_config_property(context)
+    accounts = get_usofa_account_ids(properties['usofa_bucket'])
+    delete_permissions(properties['queue_url'], properties['label'])
+    set_permissions(properties['queue_url'], properties['label'], properties['permissions'], accounts)

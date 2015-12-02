@@ -1,5 +1,4 @@
 from pybuilder.core import use_plugin, init, Author
-from pybuilder.vcs import VCSRevision
 
 use_plugin("python.core")
 use_plugin("python.unittest")
@@ -27,10 +26,12 @@ default_task = ["clean", "analyze", "package"]
 
 @init
 def set_properties(project):
+    project.depends_on("pils")
     project.build_depends_on("boto3")
     project.build_depends_on("moto")
     project.build_depends_on("unittest2")
     project.build_depends_on("simplejson")
+    project.build_depends_on("mock")
     project.set_property("coverage_threshold_warn", 50)
     project.set_property("bucket_name", "aws-set-sqs-permission-lambda")
     project.set_property("lambda_file_access_control", "private")
