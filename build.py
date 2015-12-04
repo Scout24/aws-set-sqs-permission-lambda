@@ -13,9 +13,9 @@ use_plugin("pypi:pybuilder_aws_plugin")
 
 name = "aws-set-sqs-permission-lambda"
 version = "0.1"
-summary = "aws-set-sqs-permission-lambda - Set SQS queue permissions for all ultimiate source of accounts (usofa)"
+summary = "aws-set-sqs-permission-lambda - Set SQS queue permissions for all ultimate source of accounts (usofa)"
 description = """
-    Set SQS queue permissions for all ultimiate source of accounts (usofa)
+    Set SQS queue permissions for all ultimate source of accounts (usofa)
     """
 authors = [Author("Enrico Heine", "enrico.heine@immobilienscout24.de"),
            Author("Tobias Vollmer", "tobias.vollmer@immobilienscout24.de"),
@@ -35,7 +35,7 @@ def set_properties_for_teamcity_builds(project):
     project.set_property('install_dependencies_index_url',
                          os.environ.get('PYPIPROXY_URL'))
     project.set_property('template_files', [
-        ('cfn-sphere/templates', 'aws-set-sqs-permission-lamda-stack.yaml'),
+        ('cfn-sphere/templates', 'aws-set-sqs-permission-lamda.yaml'),
     ])
 
 
