@@ -2,8 +2,3 @@ region: eu-west-1
 stacks:
   aws-set-sqs-permission-lambda:
     template-url: templates/aws-set-sqs-permission-lambda.yaml
-    parameters:
-      zipFile: v0.1/aws-set-sqs-permission-lambda.zip
-      bucketName: aws-monocyte-alarming-lambda-infrastructur
-      config: '{"usofa_bucket":"is24-accounts", "queue_url":"https://sqs.eu-west-1.amazonaws.com/831383843208/monocyte",
-              "label":"usofa-permissions", "permissions":["GetQueueUrl", "SendMessage"] }'
