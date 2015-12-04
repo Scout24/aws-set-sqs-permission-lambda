@@ -12,7 +12,7 @@ use_plugin("pypi:pybuilder_aws_plugin")
 
 
 name = "aws-set-sqs-permission-lambda"
-version = "0.1"
+version = "0.2"
 summary = "aws-set-sqs-permission-lambda - Set SQS queue permissions for all ultimate source of accounts (usofa)"
 description = """
     Set SQS queue permissions for all ultimate source of accounts (usofa)
