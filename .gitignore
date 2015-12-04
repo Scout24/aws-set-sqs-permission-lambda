@@ -58,3 +58,6 @@ target/
 
 # Virtualenv
 venv/
+
+# Do not check in the parameters with accountID
+cfn-sphere/*.yaml

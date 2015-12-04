@@ -1,0 +1,9 @@
+region: eu-west-1
+stacks:
+  aws-set-sqs-permission-lambda:
+    template-url: templates/aws-set-sqs-permission-lambda.yaml
+    parameters:
+      bucketName: destination_bucket_name
+      zipFile: v0.1/aws-set-sqs-permission-lambda.zip
+      config: '{"usofa_bucket":"my_usofa_bucket", "queue_url":"https://sqs-queue-url",
+              "label":"usofa-permissions", "permissions":["GetQueueUrl", "SendMessage"] }'

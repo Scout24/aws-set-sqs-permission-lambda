@@ -1,4 +1,0 @@
-region: eu-west-1
-stacks:
-  aws-set-sqs-permission-lambda:
-    template-url: templates/aws-set-sqs-permission-lambda.yaml
