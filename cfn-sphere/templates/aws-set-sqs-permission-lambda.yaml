@@ -26,10 +26,21 @@ Resources:
       - PolicyDocument:
           Statement:
           - Action:
-            - '*'
+            - 'sqs:AddPermission'
+            - 'sqs:RemovePermission'
             Effect: Allow
             Resource:
-            - '*'
+            - {"Fn::Join" : ["",['arn:aws:sqs:eu-west-1:', {"Ref" : 'AWS::AccountId'}, ':monocyte']]}
+          - Action:
+            - 's3:GetObject'
+            Effect: Allow
+            Resource:
+            - 'arn:aws:s3:::*/*'
+          - Action:
+            - 'lambda:GetFunctionConfiguration'
+            Effect: Allow
+            Resource:
+            - 'arn:aws:lambda:eu-west-1:*'
           Version: '2012-10-17'
         PolicyName: monocyteUpdatePolicy
   monocyteAlarmingFunction:
