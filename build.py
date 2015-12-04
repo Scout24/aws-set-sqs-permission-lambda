@@ -35,7 +35,7 @@ def set_properties_for_teamcity_builds(project):
     project.set_property('install_dependencies_index_url',
                          os.environ.get('PYPIPROXY_URL'))
     project.set_property('template_files', [
-        ('cfn-sphere/templates', 'aws-set-sqs-permission-lamda.yaml'),
+        ('cfn-sphere/templates', 'aws-set-sqs-permission-lamda-stack.yaml'),
     ])
 
 
