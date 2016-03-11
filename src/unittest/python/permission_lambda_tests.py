@@ -1,9 +1,16 @@
+import os
+
 from unittest2 import TestCase
 from mock import patch
 import simplejson as json
 import boto3
 from moto import mock_s3
 import permission_lambda
+
+# Else we run into problems with mocking
+os.environ['http_proxy'] = ''
+os.environ['https_proxy'] = ''
+os.environ['no_proxy'] = ''
 
 
 class PermissionLambdaTests(TestCase):
