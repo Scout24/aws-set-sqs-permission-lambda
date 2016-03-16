@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Set SQS permissions with lambda stack
 Parameters:
   bucketName:
-    Description: aws-monocyte-alarming distrubtion bucket that contains the Lambda function zip file
+    Description: aws-monocyte-alarming distribution bucket that contains the Lambda function zip file
     Type: String
   zipFile:
     Description: Name of the monocyte alarming distribution zip file inside the bucket
